@@ -4,7 +4,7 @@
       {{ cityCode }}
       <select v-model="cityCode">
         <option v-for="city in cities" :key="city.code" :value="city.code">
-          {{ city.name }}
+          {{ city.code }} {{ city.name }}
         </option>
       </select>
       {{ regionCode }}
@@ -14,7 +14,7 @@
           :key="region.code"
           :value="region.code"
         >
-          {{ region.name }}
+          {{ region.code }} {{ region.name }}
         </option>
       </select>
     </div>
@@ -57,6 +57,7 @@ export default {
     async getData() {
       const result = await fetch("http://10.2.1.46");
       const zip = await result.json();
+      zip.cities.sort((a,b) => a.code - b.code);
       this.zip = zip;
     },
   },
