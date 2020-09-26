@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <City />
     <Pic />
     <Todo />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
@@ -9,10 +10,12 @@
 <script>
 import Pic from './components/Pic.vue'
 import Todo from './components/Todo.vue'
+import City from './components/City.vue'
 
 export default {
   name: 'App',
   components: {
+    City,
     Pic,
     Todo
   }
