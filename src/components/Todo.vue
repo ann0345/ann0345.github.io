@@ -4,10 +4,21 @@
     <button @click="add" :disabled="!text">add</button>
     <button @click="reset">reset list</button>
     <ul>
-      <li v-for="item in list" :key="item" @click="remove(item)">
-        {{ item }}
+      <li
+        v-for="item in list"
+        :key="item.text"
+        :class="{ deleted: item.done }"
+      >
+        <input
+         type="checkbox"
+         v-model="item.done"
+        />
+        {{ item.text }}
       </li>
     </ul>
+    <pre>
+      {{ JSON.stringify(list, null, 2) }}
+    </pre>
   </div>
 </template>
 
@@ -19,24 +30,24 @@ export default {
   }),
   methods: {
     add() {
-      if(this.text){
-        this.list.push(this.text);
+      if(!this.text) return;
+      const item ={
+        text: this.text,
+        done: false
+      };
+        this.list.push(item);
         this.text = "";
-      }
-      else{
-        alert("enter your text");
-      }
     },
     reset() {
       this.list = [];
     },
-    remove(item){
-      const idx = this.list.indexOf(item);
-      this.list.splice(idx, 1);
-    }
   },
 };
 </script>
 
 <style scoped>
+.deleted {
+  color:grey;
+  text-decoration: line-through;
+}
 </style>
