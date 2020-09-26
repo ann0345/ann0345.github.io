@@ -4,7 +4,7 @@
     <button @click="add" :disabled="!text">add</button>
     <button @click="reset">reset list</button>
     <ul>
-      <li v-for="(item, index) in list" :key="item" @click="remove(index)">
+      <li v-for="item in list" :key="item" @click="remove(item)">
         {{ item }}
       </li>
     </ul>
@@ -30,9 +30,9 @@ export default {
     reset() {
       this.list = [];
     },
-    remove(index){
-      // const idx = this.list.indexOf(item);
-      this.list.splice(index, 1);
+    remove(item){
+      const idx = this.list.indexOf(item);
+      this.list.splice(idx, 1);
     }
   },
 };
