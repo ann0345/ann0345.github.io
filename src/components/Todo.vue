@@ -1,7 +1,9 @@
 <template>
   <div>
     <input v-model="text" />
-    <button @click="add" :disabled="!text">add</button>
+    <span :class="{ red : invalid }">{{ inputLength }}</span>
+    <br/>
+    <button @click="add" :disabled="invalid">add</button>
     <button @click="reset">reset list</button>
     <ul>
       <li
@@ -16,9 +18,6 @@
         {{ item.text }}
       </li>
     </ul>
-    <pre>
-      {{ JSON.stringify(list, null, 2) }}
-    </pre>
   </div>
 </template>
 
@@ -28,17 +27,27 @@ export default {
     text: "",
     list: [],
   }),
+  computed:{
+    inputLength(){
+      return this.text.length;
+    },
+    invalid(){
+      return this.inputLength < 0 || this.inputLength > 10;
+    }
+  },
   methods: {
     add() {
       if(!this.text) return;
+      if(!this.invalid) return;
       const item ={
         text: this.text,
-        done: false
+        done: false,
       };
         this.list.push(item);
         this.text = "";
     },
     reset() {
+      this.text = "";
       this.list = [];
     },
   },
@@ -49,5 +58,8 @@ export default {
 .deleted {
   color:grey;
   text-decoration: line-through;
+}
+.red{
+  color:red;
 }
 </style>
