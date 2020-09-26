@@ -1,8 +1,13 @@
 <template>
   <div id="app">
+    <CityAsync />
+    <hr>
     <City />
+    <hr>
     <Pic />
+    <hr>
     <Todo />
+    <hr>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   </div>
 </template>
@@ -11,10 +16,12 @@
 import Pic from './components/Pic.vue'
 import Todo from './components/Todo.vue'
 import City from './components/City.vue'
+import CityAsync from './components/CityAsync.vue'
 
 export default {
   name: 'App',
   components: {
+    CityAsync,
     City,
     Pic,
     Todo
