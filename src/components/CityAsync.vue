@@ -31,7 +31,7 @@ export default {
   },
   data: () => ({
     zip: null,
-    cityCode: 100,
+    cityCode: 0,
     regionCode: 0,
   }),
   computed: {
@@ -44,12 +44,13 @@ export default {
     },
   },
   watch: {
-    cityCode: {
-      handler() {
-        const region = this.regions[0];
-        this.regionCode = region ? this.regions[0].code : 0;
-      },
-      immediate: true,
+    cities() {
+      const city = this.cities[0];
+      this.cityCode = city ? city.code : 0;
+    },
+    regions() {
+      const region = this.regions[0];
+      this.regionCode = region ? region.code : 0;
     },
   },
   methods: {
