@@ -11,11 +11,13 @@
         </v-avatar>
       </template>
     </v-data-table>
+      <TableInput @input="add" />
   </v-container>
 </template>
 
 <script>
 import people from '../people.json';
+import TableInput from './TableInput';
 
 // const header = [
 //   {value: "gender", text: "gender"},
@@ -27,6 +29,9 @@ import people from '../people.json';
 // ]
 
 export default {
+  components:{
+    TableInput
+  },
   data: () => ({
     people,
     // header,
@@ -41,6 +46,11 @@ export default {
         { text:"國家", value: "country" },
         { text:"年齡", value: "age" },
       ]
+    }
+  },
+  methods:{
+    add(person){
+      this.people.unshift(person);
     }
   }
 }
