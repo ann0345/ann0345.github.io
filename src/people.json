@@ -1,0 +1,82 @@
+[
+  {
+    "gender": "male",
+    "name": "Danny",
+    "country": "United States",
+    "email": "danny.banks@example.com",
+    "age": 60,
+    "picture": "https://randomuser.me/api/portraits/men/89.jpg"
+  },
+  {
+    "gender": "female",
+    "name": "Marie",
+    "country": "Denmark",
+    "email": "marie.moller@example.com",
+    "age": 41,
+    "picture": "https://randomuser.me/api/portraits/women/4.jpg"
+  },
+  {
+    "gender": "male",
+    "name": "Emaús",
+    "country": "Brazil",
+    "email": "emaus.sales@example.com",
+    "age": 66,
+    "picture": "https://randomuser.me/api/portraits/men/48.jpg"
+  },
+  {
+    "gender": "male",
+    "name": "Íngue",
+    "country": "Brazil",
+    "email": "ingue.mendes@example.com",
+    "age": 31,
+    "picture": "https://randomuser.me/api/portraits/men/20.jpg"
+  },
+  {
+    "gender": "female",
+    "name": "الینا",
+    "country": "Iran",
+    "email": "lyn.hmdy@example.com",
+    "age": 35,
+    "picture": "https://randomuser.me/api/portraits/women/51.jpg"
+  },
+  {
+    "gender": "male",
+    "name": "Onur",
+    "country": "Turkey",
+    "email": "onur.erdogan@example.com",
+    "age": 59,
+    "picture": "https://randomuser.me/api/portraits/men/83.jpg"
+  },
+  {
+    "gender": "male",
+    "name": "Alberto",
+    "country": "Spain",
+    "email": "alberto.herrera@example.com",
+    "age": 55,
+    "picture": "https://randomuser.me/api/portraits/men/31.jpg"
+  },
+  {
+    "gender": "male",
+    "name": "Nolan",
+    "country": "United Kingdom",
+    "email": "nolan.byrd@example.com",
+    "age": 39,
+    "picture": "https://randomuser.me/api/portraits/men/86.jpg"
+  },
+  {
+    "gender": "female",
+    "name": "Aubree",
+    "country": "Canada",
+    "email": "aubree.anderson@example.com",
+    "age": 44,
+    "picture": "https://randomuser.me/api/portraits/women/85.jpg"
+  },
+  {
+    "gender": "male",
+    "name": "Esaú",
+    "country": "Brazil",
+    "email": "esau.dias@example.com",
+    "age": 46,
+    "picture": "https://randomuser.me/api/portraits/men/84.jpg"
+  }
+]

@@ -34,12 +34,18 @@
             <v-list-item-title> Pic </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item @click="page='table';drawer=false">
+          <v-list-item-content>
+            <v-list-item-title> Table </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-main>
       <Todo v-if="page === 'todo'" />
       <City v-if="page === 'city'" />
       <Pic v-if="page === 'pic'" />
+      <Table v-if="page === 'table'" />
     </v-main>
   </v-app>
 </template>
@@ -48,13 +54,15 @@
 import Todo from './components/Todo.vue';
 import City from './components/City.vue';
 import Pic from './components/Pic.vue';
+import Table from './components/Table.vue';
 
 export default {
   name: "App",
   components:{
     Todo,
     City,
-    Pic
+    Pic,
+    Table
   },
   data: () => ({
     drawer: false,
