@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-container>
-      <v-data-table :headers="headers" :items="items">
+      <v-data-table :headers="headers" :items="userData">
         <template></template>
       </v-data-table>
     </v-container>
@@ -9,7 +9,13 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
+  async mounted() {
+    this.isLoading = true;
+    await this.fetchData();
+    this.isLoading = false;
+  },
   data() {
     return {
       headers: [
@@ -59,6 +65,12 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    ...mapState(["userData"]),
+  },
+  methods: {
+    ...mapActions(["fetchData"]),
   },
 };
 </script>
