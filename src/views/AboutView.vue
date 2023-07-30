@@ -1,24 +1,54 @@
 <template>
   <v-app>
     <v-container>
-      <v-data-table :headers="headers" :items="userData">
-        <template></template>
+      <Pagination
+        v-model="options"
+        :totalCount="totalCount"
+        :pageCount="pageCount"
+      ></Pagination>
+      <v-data-table
+        :headers="headers"
+        :items="userData"
+        height="600"
+        multi-sort
+        fixed-header
+        hide-default-footer
+        page.sync="page"
+        :options.sync="options"
+        :items-per-page="itemsPerPage"
+        @page-count="pageCount = $event"
+        class="forDataTable"
+      >
+        <template v-slot:item.index="{ item, index }">
+          {{ (options.page - 1) * options.itemsPerPage + index + 1 }}
+        </template>
+        <template v-slot:item.balance="{ item }">
+          {{ formatMoney(item.balance, item.currency) }}
+        </template>
       </v-data-table>
     </v-container>
   </v-app>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
+import Pagination from "../components/Pagination";
 export default {
-  async mounted() {
-    this.isLoading = true;
-    await this.fetchData();
-    this.isLoading = false;
+  components: {
+    Pagination,
+  },
+  mounted() {
+    this.doQryDefaultData();
   },
   data() {
     return {
       headers: [
+        {
+          text: "序",
+          value: "index",
+          align: "center",
+          sortable: false,
+        },
         {
           text: "ID",
           value: "id",
@@ -32,45 +62,49 @@ export default {
           sortable: true,
         },
         {
+          text: "餘額",
+          value: "balance",
+          align: "right",
+          sortable: true,
+        },
+        {
+          text: "幣別",
+          value: "currency",
+          align: "left",
+          sortable: false,
+        },
+        {
           text: "電話",
           value: "phoneNum",
           align: "left",
           sortable: false,
         },
         {
-          text: "餘額",
-          value: "balance",
-          align: "right",
-          sortable: true,
+          text: "信箱",
+          value: "email",
+          align: "left",
+          sortable: false,
         },
       ],
-      items: [
-        {
-          id: "A123456789",
-          name: "陳O影",
-          phoneNum: "0988555669",
-          balance: 12345,
-        },
-        {
-          id: "B225558979",
-          name: "張O方",
-          phoneNum: "0911357786",
-          balance: 580,
-        },
-        {
-          id: "R122669852",
-          name: "王O資",
-          phoneNum: "0945339780",
-          balance: 99641300,
-        },
-      ],
+      page: 1,
+      pageCount: 0,
+      itemsPerPage: 10,
+      options: {},
     };
   },
   computed: {
     ...mapState(["userData"]),
+    ...mapGetters(["totalCount"]),
+  },
+  watch: {
   },
   methods: {
     ...mapActions(["fetchData"]),
+    async doQryDefaultData() {
+      // this.showLoader();
+      await this.fetchData();
+      // this.hideLoader();
+    },
   },
 };
 </script>

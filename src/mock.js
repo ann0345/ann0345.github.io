@@ -1,4 +1,4 @@
-import Mock from "mockjs";
+// import Mock from "mockjs";
 
 // // 模擬 GET 請求
 // Mock.mock("/api/data", "get", {
