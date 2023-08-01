@@ -1,16 +1,16 @@
 <template>
-  <v-row class="pb-2">
-    <v-col col="12" sm="12" md="12" lg="2" class="totalCountText">
+  <v-row class="pb-4">
+    <v-col col="12" sm="12" md="4" lg="3" class="totalCountText">
       <span>總筆數: {{ totalCount }} 筆</span>
     </v-col>
-    <v-col col="12" sm="12" md="6" lg="6" class="text-center">
+    <v-col col="12" sm="12" md="4" lg="6" class="text-center">
       <v-pagination
         v-model="page"
         :length="pageCount"
-        class="py-0"
+        class="pa-0 pagi"
       ></v-pagination>
     </v-col>
-    <v-col col="12" sm="12" md="6" lg="4" class="perPageText">
+    <v-col col="12" sm="12" md="4" lg="3" class="perPageText">
       <v-row>
         <span>每頁顯示&nbsp; </span>
         <span>
@@ -20,6 +20,7 @@
             @change="onSelectItemsPerPage"
             class="pageSelect"
             hide-details
+            solo
           ></v-select>
         </span>
         <span>&nbsp; 筆</span>
@@ -48,7 +49,7 @@ export default {
     },
     paginationMode: {
       type: Array,
-      default: () => [10, 20, 30],
+      default: () => [10, 20, 30, 40, 50],
     },
   },
   data() {
@@ -96,18 +97,29 @@ export default {
   border: 1px solid;
   margin-top: 0px;
   padding-top: 0px;
+  width: 100px;
 }
-.perPageText {
-  text-align: right;
-  align-self: self-end;
-  padding-bottom: 20px;
-  .row {
-    justify-content: right;
-    padding-right: 24px;
+@media screen and (min-width: 910px) {
+  .perPageText {
+    text-align: right;
+    align-self: self-end;
+    padding-bottom: 20px;
+    .row {
+      justify-content: right;
+      padding-right: 24px;
+    }
+    span {
+      align-self: center;
+      padding-bottom: 4px;
+      .v-input__control {
+        min-height: 36px;
+      }
+    }
   }
-  span {
-    align-self: center;
-    padding-bottom: 4px;
+}
+@media screen and (max-width: 1250px) {
+  .pagi {
+    float: left;
   }
 }
 </style>
