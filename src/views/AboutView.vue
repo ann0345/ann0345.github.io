@@ -1,5 +1,113 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <v-app>
+    <v-container>
+      <Pagination
+        v-model="options"
+        :totalCount="totalCount"
+        :pageCount="pageCount"
+      ></Pagination>
+      <v-data-table
+        :headers="headers"
+        :items="userData"
+        height="600"
+        multi-sort
+        fixed-header
+        hide-default-footer
+        page.sync="page"
+        :options.sync="options"
+        sort-by="name"
+        :items-per-page="itemsPerPage"
+        @page-count="pageCount = $event"
+        class="forDataTable"
+      >
+        <template v-slot:item.index="{ item, index }">
+          {{ (options.page - 1) * options.itemsPerPage + index + 1 }}
+        </template>
+        <template v-slot:item.balance="{ item }">
+          {{ formatMoney(item.balance, item.currency) }}
+        </template>
+      </v-data-table>
+    </v-container>
+  </v-app>
 </template>
+
+<script>
+import { mapState, mapGetters, mapActions } from "vuex";
+import Pagination from "../components/Pagination";
+export default {
+  components: {
+    Pagination,
+  },
+  mounted() {
+    this.doQryDefaultData();
+  },
+  data() {
+    return {
+      headers: [
+        {
+          text: "序",
+          value: "index",
+          align: "center",
+          sortable: false,
+        },
+        {
+          text: "ID",
+          value: "id",
+          align: "left",
+          sortable: true,
+        },
+        {
+          text: "姓名",
+          value: "name",
+          align: "left",
+          sortable: true,
+        },
+        {
+          text: "餘額",
+          value: "balance",
+          align: "right",
+          sortable: false,
+        },
+        {
+          text: "幣別",
+          value: "currency",
+          align: "left",
+          sortable: true,
+        },
+        {
+          text: "電話",
+          value: "phoneNum",
+          align: "left",
+          sortable: false,
+        },
+        {
+          text: "信箱",
+          value: "email",
+          align: "left",
+          sortable: true,
+        },
+      ],
+      page: 1,
+      pageCount: 0,
+      itemsPerPage: 20,
+      options: {},
+    };
+  },
+  computed: {
+    ...mapState(["userData"]),
+    ...mapGetters(["totalCount"]),
+  },
+  watch: {
+  },
+  methods: {
+    ...mapActions(["fetchData"]),
+    async doQryDefaultData() {
+      // this.showLoader();
+      await this.fetchData();
+      // this.hideLoader();
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped></style>

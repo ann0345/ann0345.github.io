@@ -1,0 +1,32 @@
+body {
+    background-color: lightgray;
+  }
+#app {
+    font-family: Arial, sans-serif;
+    font-size: large;
+    background-color: lightgray;
+}
+
+.forDataTable {
+    background-color: rgb(215, 239, 246) !important;
+    thead {
+        tr:not(.v-data-table__progress) {
+            th {
+                font-size: 20px !important;
+                text-align: center !important;
+                // 要加important fixed-header會刷掉bgcolor
+                background-color: rgb(169, 232, 253) !important;
+                border: 1px solid;
+            }
+        }
+    }
+    tbody {
+        tr {
+            background-color: rgb(215, 239, 246);
+        }
+        td {
+            font-size: 18px !important;
+            border: 1px solid;
+        }
+    }
+}
