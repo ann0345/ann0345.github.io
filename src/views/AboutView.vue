@@ -15,6 +15,7 @@
         hide-default-footer
         page.sync="page"
         :options.sync="options"
+        sort-by="name"
         :items-per-page="itemsPerPage"
         @page-count="pageCount = $event"
         class="forDataTable"
@@ -52,7 +53,7 @@ export default {
         {
           text: "ID",
           value: "id",
-          align: "center",
+          align: "left",
           sortable: true,
         },
         {
@@ -65,13 +66,13 @@ export default {
           text: "餘額",
           value: "balance",
           align: "right",
-          sortable: true,
+          sortable: false,
         },
         {
           text: "幣別",
           value: "currency",
           align: "left",
-          sortable: false,
+          sortable: true,
         },
         {
           text: "電話",
@@ -83,7 +84,7 @@ export default {
           text: "信箱",
           value: "email",
           align: "left",
-          sortable: false,
+          sortable: true,
         },
       ],
       page: 1,
