@@ -21,6 +21,7 @@
             class="pageSelect"
             hide-details
             solo
+            dense
           ></v-select>
         </span>
         <span>&nbsp; 筆</span>
@@ -61,7 +62,7 @@ export default {
   computed: {
     paginationSelect: {
       get() {
-        return this.value.itemPerPage;
+        return this.value.itemsPerPage;
       },
       set(value) {
         this.$set(this.value, "itemsPerPage", value);
@@ -78,9 +79,6 @@ export default {
     },
   },
   methods: {
-    reset() {
-      this.paginationSelect = 20;
-    },
     onSelectItemsPerPage(value) {
       this.$emit("input", { ...this.value, itemsPerPage: value });
     },
