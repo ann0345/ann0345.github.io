@@ -33,7 +33,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex";
-import Pagination from "../components/Pagination";
+import Pagination from "../molecules/Pagination";
 export default {
   components: {
     Pagination,
