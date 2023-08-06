@@ -8,7 +8,7 @@
       ></Pagination>
       <v-data-table
         :headers="headers"
-        :items="userData"
+        :items="dataTableItems"
         height="600"
         multi-sort
         fixed-header
@@ -94,16 +94,15 @@ export default {
     };
   },
   computed: {
-    ...mapState(["userData"]),
-    ...mapGetters(["totalCount"]),
+    ...mapState("dataTable", ["dataTableItems"]),
+    ...mapGetters("dataTable", ["totalCount"]),
   },
-  watch: {
-  },
+  watch: {},
   methods: {
-    ...mapActions(["fetchData"]),
+    ...mapActions("dataTable", ["fetchDataTable"]),
     async doQryDefaultData() {
       // this.showLoader();
-      await this.fetchData();
+      await this.fetchDataTable();
       // this.hideLoader();
     },
   },
