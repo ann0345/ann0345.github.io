@@ -1,6 +1,24 @@
 <template>
   <v-container>
-    <v-timeline dense>
+    <v-timeline
+      :reverse="true"
+      :dense="$vuetify.breakpoint.smAndDown"
+      v-if="positionCenter"
+    >
+      <v-timeline-item v-for="(item, index) in value" :key="item.company">
+        <span slot="opposite">{{ item.fromMonth }}-{{ item.toMonth }}</span>
+        <v-card class="elevation-2">
+          <v-card-title class="text-h5">
+            {{ item.company }} - {{ item.title }}
+          </v-card-title>
+          <v-card-text>
+            <p class="summery">{{ item.summery }}</p>
+            <span class="detail">{{ item.detail }}</span>
+          </v-card-text>
+        </v-card>
+      </v-timeline-item>
+    </v-timeline>
+    <v-timeline dense v-else>
       <v-timeline-item v-for="(item, index) in value" :key="item.company">
         <v-card class="timelineCard">
           <v-card-title class="text-h5">
@@ -25,14 +43,17 @@ export default {
     value: {
       type: Array,
     },
+    positionCenter: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {};
   },
   created() {},
   computed: {},
-  methods: {
-  },
+  methods: {},
 };
 </script>
 

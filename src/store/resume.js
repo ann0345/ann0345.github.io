@@ -62,14 +62,6 @@ const actions = {
             detail: "333",
           },
           {
-            company: "國立中山大學 學生事務處",
-            title: "Frontend Engineer",
-            fromMonth: "20161201",
-            toMonth: "20181201",
-            summery: "協助學校內部使用的網頁前端畫面開發",
-            detail: "333",
-          },
-          {
             company: "Nasrio 拾光網路有限公司",
             title: "Frontend Engineer",
             fromMonth: "20180301",
@@ -77,6 +69,14 @@ const actions = {
             summery:
               "協助接案的網頁前端設計開發，其中有律師事務所官網、金融企業網銀等",
             detail: "444",
+          },
+          {
+            company: "國立中山大學 學生事務處",
+            title: "Frontend Engineer",
+            fromMonth: "20161201",
+            toMonth: "20181201",
+            summery: "協助學校內部使用的網頁前端畫面開發",
+            detail: "333",
           },
         ],
       },

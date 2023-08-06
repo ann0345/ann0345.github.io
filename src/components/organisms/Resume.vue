@@ -30,6 +30,7 @@
         <v-card-title class="text-h4">工作經歷</v-card-title>
         <v-divider class="mb-2"></v-divider>
         <Timeline v-model="workExp"></Timeline>
+        <!-- <Timeline v-model="workExp" :positionCenter="false"></Timeline> -->
       </v-card>
     </v-container>
   </v-app>
