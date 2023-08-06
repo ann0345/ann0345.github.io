@@ -1,10 +1,11 @@
+$bg-color: lightgray;
 body {
-    background-color: lightgray;
+    background-color: $bg-color;
   }
 #app {
     font-family: Arial, sans-serif;
     font-size: large;
-    background-color: lightgray;
+    background-color: $bg-color;
 }
 .v-application--wrap {
     min-height: 100% !important;
@@ -31,4 +32,8 @@ body {
             border: 1px solid;
         }
     }
+}
+
+.talign-start {
+    text-align: start;
 }
