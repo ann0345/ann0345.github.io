@@ -94,13 +94,12 @@ export default {
     };
   },
   computed: {
-    ...mapState(["dataTableItems"]),
-    ...mapGetters(["totalCount"]),
+    ...mapState("dataTable", ["dataTableItems"]),
+    ...mapGetters("dataTable", ["totalCount"]),
   },
-  watch: {
-  },
+  watch: {},
   methods: {
-    ...mapActions(["fetchDataTable"]),
+    ...mapActions("dataTable", ["fetchDataTable"]),
     async doQryDefaultData() {
       // this.showLoader();
       await this.fetchDataTable();
