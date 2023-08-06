@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-timeline dense>
-      <v-timeline-item v-for="(item, index) in value" :key="item">
+      <v-timeline-item v-for="(item, index) in value" :key="item.company">
         <v-card class="timelineCard">
           <v-card-title class="text-h5">
             {{ item.company }} - {{ item.title }} ({{ item.fromMonth }}-{{
@@ -31,7 +31,8 @@ export default {
   },
   created() {},
   computed: {},
-  methods: {},
+  methods: {
+  },
 };
 </script>
 

@@ -7,19 +7,19 @@
         <v-row>
           <v-col col="12" sm="12" md="4" lg="4">
             <UnorderedList
-              v-model="list"
+              v-model="skillGroup1"
               subTitle="程式/網頁設計語言"
             ></UnorderedList>
           </v-col>
           <v-col col="12" sm="12" md="4" lg="4">
             <UnorderedList
-              v-model="list"
+              v-model="skillGroup2"
               subTitle="開發/專案工具"
             ></UnorderedList>
           </v-col>
           <v-col col="12" sm="12" md="4" lg="4">
             <UnorderedList
-              v-model="list"
+              v-model="skillGroup3"
               subTitle="文書/影音軟體"
             ></UnorderedList>
           </v-col>
@@ -29,7 +29,7 @@
       <v-card class="vcard">
         <v-card-title class="text-h4">工作經歷</v-card-title>
         <v-divider class="mb-2"></v-divider>
-        <Timeline v-model="items"></Timeline>
+        <Timeline v-model="workExp"></Timeline>
       </v-card>
     </v-container>
   </v-app>
@@ -43,7 +43,9 @@ export default {
     Timeline,
     UnorderedList,
   },
-  mounted() {},
+  mounted() {
+    this.fetchResume();
+  },
   data() {
     return {
       list: [
@@ -72,12 +74,16 @@ export default {
     };
   },
   computed: {
-    // ...mapState("dataTable", ["dataTableItems"]),
-    // ...mapGetters("dataTable", ["totalCount"]),
+    ...mapState("resume", [
+      "skillGroup1",
+      "skillGroup2",
+      "skillGroup3",
+      "workExp",
+    ]),
   },
   watch: {},
   methods: {
-    // ...mapActions("dataTable", ["fetchDataTable"]),
+    ...mapActions("resume", ["fetchResume"]),
   },
 };
 </script>

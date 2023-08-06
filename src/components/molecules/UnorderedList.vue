@@ -2,8 +2,8 @@
   <v-container>
     <span class="subTitle">{{ subTitle }}</span>
     <ul>
-      <li v-for="(item, index) in value" :key="item" class="talign-start">
-        <span class="name">{{ item.name }}</span>
+      <li v-for="(item, index) in value" :key="item.value" class="talign-start">
+        <span class="skill">{{ item }}</span>
       </li>
     </ul>
   </v-container>
@@ -34,7 +34,7 @@ export default {
   text-align: start !important;
   font-size: 24px;
 }
-.name {
+.skill {
   font-size: 20px;
 }
 </style>
