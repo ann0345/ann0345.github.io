@@ -91,7 +91,7 @@ export default {
 
 <style lang="scss" scoped>
 .titleStyle {
-  font-size: 24px;
+  font-size: 22px;
   height: 40px !important;
   span {
     padding: 2px;
