@@ -1,3 +1,8 @@
+$bg-color: lightgray;
+$th-color: rgb(189, 233, 247);
+$td-color: rgb(222, 242, 249);
+$primary: #1976d2;
+
 body {
     background-color: lightgray;
   }
@@ -10,21 +15,21 @@ body {
     min-height: 100% !important;
 }
 .forDataTable {
-    background-color: rgb(222, 242, 249) !important;
+    background-color: $td-color !important;
     thead {
         tr:not(.v-data-table__progress) {
             th {
                 font-size: 20px !important;
                 text-align: center !important;
                 // 要加important fixed-header會刷掉bgcolor
-                background-color: rgb(189, 233, 247) !important;
+                background-color: $th-color !important;
                 border: 1px solid;
             }
         }
     }
     tbody {
         tr {
-            background-color: rgb(222, 242, 249);
+            background-color: $td-color;
         }
         td {
             font-size: 18px !important;
