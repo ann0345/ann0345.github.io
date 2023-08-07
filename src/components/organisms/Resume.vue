@@ -4,39 +4,50 @@
       <v-card class="vcard">
         <v-card-title class="text-h4">技能</v-card-title>
         <v-divider class="mb-2"></v-divider>
-        <v-row>
+        <v-row class="pl-8">
           <v-col col="12" sm="12" md="4" lg="4">
             <UnorderedList
               v-model="skillGroup1"
               subTitle="程式/網頁設計語言"
+              :titleIcon="'mdi-file-code'"
+              :havePaddingY="false"
             ></UnorderedList>
           </v-col>
           <v-col col="12" sm="12" md="4" lg="4">
             <UnorderedList
               v-model="skillGroup2"
               subTitle="開發/專案工具"
+              :titleIcon="'mdi-source-branch'"
+              :havePaddingY="false"
             ></UnorderedList>
           </v-col>
           <v-col col="12" sm="12" md="4" lg="4">
             <UnorderedList
               v-model="skillGroup3"
               subTitle="文書/影音軟體"
+              :titleIcon="'mdi-movie-open-edit'"
+              :havePaddingY="false"
             ></UnorderedList>
           </v-col>
         </v-row>
       </v-card>
       <br />
       <v-card class="vcard">
-        <v-card-title class="text-h4">工作經歷</v-card-title>
+        <v-card-title class="text-h4">
+          工作經歷&nbsp;
+          <v-switch
+            v-model="positionCenter"
+            label="Timeline set centered"
+          ></v-switch>
+        </v-card-title>
         <v-divider class="mb-2"></v-divider>
-        <Timeline v-model="workExp"></Timeline>
-        <!-- <Timeline v-model="workExp" :positionCenter="false"></Timeline> -->
+        <Timeline v-model="workExp" :positionCenter="positionCenter"></Timeline>
       </v-card>
     </v-container>
   </v-app>
 </template>
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 import Timeline from "../molecules/Timeline";
 import UnorderedList from "../molecules/UnorderedList";
 export default {
@@ -49,29 +60,7 @@ export default {
   },
   data() {
     return {
-      list: [
-        { id: "123456789", name: "選項 1" },
-        { id: "234567890", name: "選項 2" },
-        { id: "345678901", name: "選項 3" },
-      ],
-      items: [
-        {
-          company: "company",
-          title: "123456789",
-          fromMonth: "202010",
-          toMonth: "202110",
-          summery: "選項 1",
-          detail: "2222",
-        },
-        {
-          company: "company2",
-          title: "123456789",
-          fromMonth: "202010",
-          toMonth: "202110",
-          summery: "選項 2",
-          detail: "333",
-        },
-      ],
+      positionCenter: true,
     };
   },
   computed: {
