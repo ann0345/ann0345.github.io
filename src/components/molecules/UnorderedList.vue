@@ -1,8 +1,24 @@
 <template>
   <v-container>
-    <span class="subTitle">{{ subTitle }}</span>
+    <span class="talign-start">
+      <Chip
+        v-if="subTitle"
+        :title="subTitle"
+        :icon="titleIcon"
+        :color="'#1976d2'"
+        outlined
+        rightIcon
+      ></Chip>
+    </span>
     <ul>
-      <li v-for="(item, index) in value" :key="item.value" class="talign-start">
+      <li
+        v-for="(item, index) in value"
+        :key="item.value"
+        class="talign-start"
+        :class="{
+          'padding-y': havePaddingY,
+        }"
+      >
         <span class="skill">{{ item }}</span>
       </li>
     </ul>
@@ -10,14 +26,25 @@
 </template>
 
 <script>
+import Chip from "../atoms/Chip";
 export default {
   name: "UnorderedListComponent",
+  components: {
+    Chip,
+  },
   props: {
+    titleIcon: {
+      type: String,
+    },
     subTitle: {
       type: String,
     },
     value: {
       type: Array,
+    },
+    havePaddingY: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
@@ -30,11 +57,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.subTitle {
-  text-align: start !important;
-  font-size: 24px;
-}
 .skill {
   font-size: 20px;
+}
+.padding-y {
+  padding: 6px 0px;
 }
 </style>
