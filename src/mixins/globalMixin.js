@@ -1,8 +1,9 @@
 import Vue from "vue";
+import moment from "moment";
 
 export default {
   methods: {
-    formatMoney(val = 0, currency = "NTD") {
+    formatMoney(v = 0, currency = "NTD") {
       const currencyToPrecision = {
         NTD: 0,
         JPY: 0,
@@ -10,14 +11,19 @@ export default {
         EUR: 2,
       };
       const precision = currencyToPrecision[currency];
-      if (!val) {
-        return val;
+      if (!v) {
+        return v;
       } else {
-        return Number(val).toLocaleString(undefined, {
+        return Number(v).toLocaleString(undefined, {
           minimumFractionDigits: precision,
           maximumFractionDigits: precision,
         });
       }
+    },
+    formatTillMonth(v) {
+      let date = moment(v, "YYYYMMDD");
+      if (!date.isValid()) return v;
+      return moment(date).format("MMM. YYYY");
     },
     // showLoader(title = "Loading data...") {
     //   return Vue.swal({

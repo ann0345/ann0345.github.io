@@ -6,7 +6,10 @@
       v-if="positionCenter"
     >
       <v-timeline-item v-for="(item, index) in value" :key="item.company">
-        <span slot="opposite">{{ item.fromMonth }}-{{ item.toMonth }}</span>
+        <span slot="opposite"
+          >{{ formatTillMonth(item.fromMonth) }} -
+           {{ formatTillMonth(item.toMonth) }}</span
+        >
         <v-card class="elevation-2">
           <v-card-title class="text-h5">
             {{ item.company }} - {{ item.title }}
