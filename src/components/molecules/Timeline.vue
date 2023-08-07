@@ -5,33 +5,41 @@
       :dense="$vuetify.breakpoint.smAndDown"
       v-if="positionCenter"
     >
-      <v-timeline-item v-for="(item, index) in value" :key="item.company">
-        <span slot="opposite"
+      <v-timeline-item v-for="item in value" :key="item.company">
+        <span slot="opposite" class="onBoardTime"
           >{{ formatTillMonth(item.fromMonth) }} -
-           {{ formatTillMonth(item.toMonth) }}</span
+          {{ formatTillMonth(item.toMonth) }}</span
         >
         <v-card class="elevation-2">
-          <v-card-title class="text-h5">
+          <v-card-title class="text-h5 cardTitle">
             {{ item.company }} - {{ item.title }}
           </v-card-title>
-          <v-card-text>
-            <p class="summery">{{ item.summery }}</p>
-            <span class="detail">{{ item.detail }}</span>
+          <v-card-text class="cardText">
+            <p>{{ item.summery }}</p>
+            <span v-if="item.detailList">
+              <UnorderedList v-model="item.detailList"></UnorderedList>
+            </span>
+            <span v-else></span>
           </v-card-text>
         </v-card>
       </v-timeline-item>
     </v-timeline>
     <v-timeline dense v-else>
-      <v-timeline-item v-for="(item, index) in value" :key="item.company">
-        <v-card class="timelineCard">
-          <v-card-title class="text-h5">
-            {{ item.company }} - {{ item.title }} ({{ item.fromMonth }}-{{
-              item.toMonth
-            }})</v-card-title
-          >
-          <v-card-text class="talign-start">
-            <p class="summery">{{ item.summery }}</p>
-            <span class="detail">{{ item.detail }}</span>
+      <v-timeline-item v-for="item in value" :key="item.company">
+        <v-card class="elevation-2">
+          <v-card-title class="text-h5 cardTitle">
+            {{ item.company }} - {{ item.title }}
+            <span class="onBoardTime pl-2">
+              ({{ formatTillMonth(item.fromMonth) }} -
+              {{ formatTillMonth(item.toMonth) }})
+            </span>
+          </v-card-title>
+          <v-card-text class="cardText">
+            <p>{{ item.summery }}</p>
+            <span v-if="item.detailList">
+              <UnorderedList v-model="item.detailList"></UnorderedList>
+            </span>
+            <span v-else></span>
           </v-card-text>
         </v-card>
       </v-timeline-item>
@@ -40,15 +48,19 @@
 </template>
 
 <script>
+import UnorderedList from "./UnorderedList";
 export default {
   name: "TimelineComponent",
+  components: {
+    UnorderedList,
+  },
   props: {
     value: {
       type: Array,
     },
     positionCenter: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   data() {
@@ -61,14 +73,24 @@ export default {
 </script>
 
 <style lang="scss" scope>
-.timelineCard {
-  background-color: lightgrey;
+.cardTitle {
+  background-color: $th-color;
 }
-.summery {
-  font-size: 22px;
+.cardText {
+  padding-top: 16px !important;
+  background-color: $td-color;
+  p {
+    color: black;
+    font-size: 22px;
+    text-align: start;
+    margin-bottom: 0px !important;
+  }
+  span {
+    color: rgb(33, 33, 33);
+  }
 }
-.detail {
+.onBoardTime {
   font-size: 20px;
-  padding-left: 20px;
+  color: rgb(40, 40, 40);
 }
 </style>
