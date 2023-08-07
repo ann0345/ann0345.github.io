@@ -35,6 +35,7 @@
 import { mapState, mapGetters, mapActions } from "vuex";
 import Pagination from "../molecules/Pagination";
 export default {
+  name: "DataTableComponent",
   components: {
     Pagination,
   },

@@ -1,15 +1,24 @@
 $bg-color: lightgray;
 $th-color: #bde9f7;
 $td-color: #def2f9;
+$link-color: #339e70;
+$mainText-color: #2c3e50;
 $primary: #1976d2;
 
 body {
     background-color: $bg-color;
-  }
+}
 #app {
-    font-family: Arial, sans-serif;
-    font-size: large;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: x-large;
     background-color: $bg-color;
+    color: #2c3e50;
+    text-align: center;
+}
+a {
+  color: $link-color;
 }
 .v-application--wrap {
     min-height: 100% !important;

@@ -51,6 +51,7 @@ import { mapState, mapActions } from "vuex";
 import Timeline from "../molecules/Timeline";
 import UnorderedList from "../molecules/UnorderedList";
 export default {
+  name: "ResumeComponent",
   components: {
     Timeline,
     UnorderedList,

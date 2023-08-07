@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Intro</router-link> |
       <router-link to="/resume">Resume</router-link> |
       <router-link to="/dataTable">DataTable</router-link>
     </nav>
@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss" scope>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +28,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: $link-color;
 }
 </style>
