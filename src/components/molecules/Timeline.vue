@@ -11,7 +11,7 @@
           {{ formatTillMonth(item.toMonth) }}</span
         >
         <v-card class="elevation-2">
-          <v-card-title class="text-h5 cardTitle">
+          <v-card-title class="cardTitle">
             {{ item.company }} - {{ item.title }}
           </v-card-title>
           <v-card-text class="cardText">
@@ -27,7 +27,7 @@
     <v-timeline dense v-else>
       <v-timeline-item v-for="item in value" :key="item.company">
         <v-card class="elevation-2">
-          <v-card-title class="text-h5 cardTitle">
+          <v-card-title class="cardTitle">
             {{ item.company }} - {{ item.title }}
             <span class="onBoardTime pl-2">
               ({{ formatTillMonth(item.fromMonth) }} -
@@ -74,6 +74,7 @@ export default {
 
 <style lang="scss" scope>
 .cardTitle {
+  font-size: 22px;
   background-color: $th-color;
 }
 .cardText {
@@ -81,7 +82,7 @@ export default {
   background-color: $td-color;
   p {
     color: black;
-    font-size: 22px;
+    font-size: 20px;
     text-align: start;
     margin-bottom: 0px !important;
   }

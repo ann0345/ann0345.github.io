@@ -58,7 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 .skill {
-  font-size: 20px;
+  font-size: 18px;
 }
 .padding-y {
   padding: 6px 0px;
