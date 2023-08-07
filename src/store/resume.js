@@ -7,8 +7,7 @@ const state = {
   skillGroup3: [],
   workExp: [],
 };
-const getters = {
-};
+const getters = {};
 const mutations = {
   setResume(state, data) {
     state.skillGroup1 = data.skillGroup1;
@@ -59,24 +58,31 @@ const actions = {
             toMonth: "now",
             summery:
               "主要負責公司內部使用的理賠系統 (Expert Claim Processing System) 2.0專案",
-            detail: "333",
+            detailList: [
+              "使用Vue2(Vuex、Vuetify、Vue Router)開發及維護",
+              "與後端協作串接RESTful API",
+              "與user溝通畫面需求並撰寫前端開發文件",
+              "協助處理基礎Data Patch及資料撈取作業",
+              "使用Jenkins上版; Kibana及OCP查log、除錯和效能調校",
+              "使用敏捷開發，熟悉Scrum流程",
+              "協助公司內部行政事務(擔任福委及部門窗口)",
+            ],
           },
           {
             company: "Nasrio 拾光網路有限公司",
             title: "Frontend Engineer",
             fromMonth: "20180301",
             toMonth: "20180701",
-            summery:
-              "協助接案的網頁前端設計開發，其中有律師事務所官網、金融企業網銀等",
-            detail: "444",
+            summery: "協助接案的網頁前端設計開發，API串接",
+            detailList: ["律師事務所官網、金融企業網銀等"],
           },
           {
             company: "國立中山大學 學生事務處",
             title: "Frontend Engineer",
             fromMonth: "20161201",
             toMonth: "20181201",
-            summery: "協助學校內部使用的網頁前端畫面開發",
-            detail: "333",
+            summery: "協助學校內部使用的網頁前端畫面開發，API串接",
+            detailList: ["運動證辦證管理系統、出勤管理系統等"],
           },
         ],
       },
