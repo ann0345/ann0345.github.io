@@ -18,20 +18,20 @@
                 rel="noopener noreferrer"
                 class="pr-2"
               >
-                <i class="fa-brands fa-linkedin fa-2xl"></i>
+                <i class="fa-brands fa-linkedin fa-xl"></i>
               </a>
               <a
                 href="mailto:a23010324@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="pr-2"
-                ><i class="fa-solid fa-envelope fa-2xl"></i
+                ><i class="fa-solid fa-envelope fa-xl"></i
               ></a>
               <a
                 href="https://github.com/ann0345/personalwork"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><i class="fa-brands fa-github fa-2xl"></i
+                ><i class="fa-brands fa-github fa-xl"></i
               ></a>
             </v-row>
             <v-row style="font-size: 20px">
@@ -77,7 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 .vContainer {
-  margin-top: 120px;
+  margin-top: 50px;
   width: 65%;
   .v-card {
     border: 1px solid;
@@ -86,9 +86,8 @@ export default {
   }
 }
 .doc {
-  width: -webkit-fill-available;
-  padding-top: 36px;
   .row {
+    margin-top: 4px;
     margin-bottom: 0px;
   }
 }
