@@ -29,13 +29,13 @@ Vue
 
 ### Components
 詳 [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/)
-- atoms 最基本的components，包括按鈕輸入框等，與父層溝通單純使用props運作
+- atoms(原子) 最基本的components，包括按鈕輸入框等，與父層溝通單純使用props運作
 
-- molecules 會將atoms層的components組在這層，與父層溝通單純使用props運作
+- molecules(分子) 會將atoms層的components組在這層，與父層溝通單純使用props運作
 
-- organisms 會將atoms及molecules層的components組在這層，並開始做store和商業邏輯的複雜操作
+- organisms(有機體) 會將atoms及molecules層的components組在這層，並開始做store和商業邏輯的複雜操作
 
-- pages 會將organisms層的components組在這層，並藉由此層做router跳轉依據 (目前仍使用src/views)
+- pages(頁面) 會將organisms層的components組在這層，並藉由此層做router跳轉依據 (目前仍使用src/views)
 
 ## Project setup
 ```
