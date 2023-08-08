@@ -25,18 +25,11 @@ export default {
       if (!date.isValid()) return v;
       return moment(date).format("MMM. YYYY");
     },
-    // showLoader(title = "Loading data...") {
-    //   return Vue.swal({
-    //     title,
-    //     allowOutsideClick: false,
-    //     allowEscapeKey: false,
-    //     didOpen: () => {
-    //       Vue.swal.showLoading();
-    //     },
-    //   });
-    // },
-    // hideLoader() {
-    //   Vue.swal.close();
-    // },
+    showLoader(title = "Loading data...") {
+      Vue.swal.showLoading();
+    },
+    hideLoader() {
+      Vue.swal.close();
+    },
   },
 };

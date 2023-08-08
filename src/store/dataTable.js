@@ -21,7 +21,7 @@ const actions = {
   fetchDataTable({ commit }) {
     // 模擬API請求，並使用Mock.js生成數據
     Mock.mock("/api/data", "get", {
-      "data|50-150": [
+      "data|20-60": [
         {
           id: "@id",
           name: "@name",

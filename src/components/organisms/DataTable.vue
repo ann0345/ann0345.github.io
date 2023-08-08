@@ -102,9 +102,7 @@ export default {
   methods: {
     ...mapActions("dataTable", ["fetchDataTable"]),
     async doQryDefaultData() {
-      // this.showLoader();
       await this.fetchDataTable();
-      // this.hideLoader();
     },
   },
 };
