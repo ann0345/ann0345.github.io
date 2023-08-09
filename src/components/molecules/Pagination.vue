@@ -1,16 +1,16 @@
 <template>
   <v-row class="pb-4">
-    <v-col col="12" sm="12" md="4" lg="3" class="totalCountText">
+    <v-col col="12" xs="12" sm="12" md="4" lg="3" class="totalCountText">
       <span>總筆數: {{ totalCount }} 筆</span>
     </v-col>
-    <v-col col="12" sm="12" md="4" lg="6" class="text-center">
+    <v-col col="12" xs="12" sm="12" md="4" lg="6" class="text-center">
       <v-pagination
         v-model="page"
         :length="pageCount"
-        class="pa-0 pagi"
+        class="pa-0"
       ></v-pagination>
     </v-col>
-    <v-col col="12" sm="12" md="4" lg="3" class="perPageText">
+    <v-col col="12" xs="12" sm="12" md="4" lg="3" class="perPageText">
       <v-row>
         <span>每頁顯示&nbsp; </span>
         <span>
@@ -97,7 +97,7 @@ export default {
   padding-top: 0px;
   width: 100px;
 }
-@media screen and (min-width: 910px) {
+@media (min-width: 910px) {
   .perPageText {
     text-align: right;
     align-self: self-end;
@@ -115,9 +115,14 @@ export default {
     }
   }
 }
-@media screen and (max-width: 1250px) {
-  .pagi {
-    float: left;
+@media (max-width: 1250px) {
+  .totalCountText {
+    text-align: center;
+  }
+  .perPageText {
+    .row {
+      justify-content: center;
+    }
   }
 }
 </style>

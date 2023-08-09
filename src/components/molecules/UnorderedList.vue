@@ -14,7 +14,7 @@
       <li
         v-for="(item, index) in value"
         :key="item.value"
-        class="talign-start"
+        class="listStyle"
         :class="{
           'padding-y': havePaddingY,
         }"
@@ -62,5 +62,9 @@ export default {
 }
 .padding-y {
   padding: 6px 0px;
+}
+.listStyle {
+  text-align: start;
+  word-wrap: break-word;
 }
 </style>

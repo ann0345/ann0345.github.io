@@ -76,10 +76,12 @@ export default {
 .cardTitle {
   font-size: 22px;
   background-color: $th-color;
+  word-break: break-word;
 }
 .cardText {
   padding-top: 16px !important;
   background-color: $td-color;
+  word-break: break-word;
   p {
     color: black;
     font-size: 20px;
