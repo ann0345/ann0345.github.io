@@ -9,9 +9,9 @@
           <v-col col="12" xs="12" sm="12" md="12" lg="8" class="doc">
             <v-row class="text-h4"><v-col>陳品蓉</v-col></v-row>
             <v-row style="font-size: 20px">
-              <v-col xs="12" sm="12" md="12" lg="4">中國人壽 前端工程師</v-col>
+              <v-col xs="12" sm="12" md="12" lg="4">凱基人壽 前端工程師</v-col>
               <v-col xs="12" sm="12" md="12" lg="8"
-                >ChinaLife Frontend Engineer</v-col
+                >KgiLife Frontend Engineer</v-col
               >
             </v-row>
             <v-row class="pb-2">
@@ -91,7 +91,7 @@ export default {
   width: 85%;
   .v-card {
     border: 1px solid;
-    background-color: $bg-color !important;
+    background-color: var(--bg-color) !important;
     padding: 28px;
   }
 }

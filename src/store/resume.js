@@ -52,12 +52,12 @@ const actions = {
         ],
         workExp: [
           {
-            company: "中國人壽保險股份有限公司",
+            company: "凱基人壽保險股份有限公司",
             title: "Frontend Engineer",
             fromMonth: "20191101",
             toMonth: "now",
             summery:
-              "主要負責公司內部使用的理賠系統 (Expert Claim Processing System) 2.0專案",
+              "主要負責公司內部使用的理賠系統 (Expert Claims Processing System) 2.0專案",
             detailList: [
               "使用Vue2(Vuex、Vuetify、Vue Router)開發及維護",
               "與後端協作串接RESTful API",
