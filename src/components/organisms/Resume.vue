@@ -34,11 +34,15 @@
       <br />
       <v-card class="vcard">
         <v-card-title class="text-h4">
-          工作經歷&nbsp;
-          <v-switch
+          工作經歷
+          <SwitchVuetify
             v-model="positionCenter"
             label="Timeline set centered"
-          ></v-switch>
+            inset
+            class="pl-4"
+            :false-value="false"
+            :true-value="true"
+          ></SwitchVuetify>
         </v-card-title>
         <v-divider class="mb-2"></v-divider>
         <Timeline v-model="workExp" :positionCenter="positionCenter"></Timeline>
@@ -48,13 +52,9 @@
 </template>
 <script>
 import { mapState, mapActions } from "vuex";
-import Timeline from "../molecules/Timeline";
-import UnorderedList from "../molecules/UnorderedList";
 export default {
   name: "ResumeComponent",
   components: {
-    Timeline,
-    UnorderedList,
   },
   mounted() {
     this.fetchResume();
@@ -82,6 +82,6 @@ export default {
 <style lang="scss" scoped>
 .vcard {
   border: 1px solid;
-  background-color: $bg-color !important;
+  background-color: var(--bg-color) !important;
 }
 </style>

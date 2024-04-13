@@ -9,6 +9,17 @@ export default new Vuetify({
   icons: {
     iconfont: "fa",
   },
+  theme: {
+    themes: {
+      light: {
+        primary: "#1976d2",
+      },
+      dark: {
+        background: "#FFFFFF",
+        text:"#21283E",
+      },
+    },
+  },
   lang: {
     locales: { zhHant },
     current: "zhHant",

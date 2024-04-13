@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-container>
+      <span>Fake data below</span>
       <Pagination
         v-model="options"
         :totalCount="totalCount"
@@ -33,11 +34,9 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex";
-import Pagination from "../molecules/Pagination";
 export default {
   name: "DataTableComponent",
   components: {
-    Pagination,
   },
   mounted() {
     this.doQryDefaultData();

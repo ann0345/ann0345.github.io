@@ -3,7 +3,7 @@
     <v-chip
       class="titleStyle"
       :color="color"
-      :textColor="TextColor"
+      :textColor="textColor"
       :filter="filter"
       :label="label"
       :link="link"
@@ -12,6 +12,7 @@
       :close="close"
       :small="small"
       :large="large"
+      :variant="variant"
     >
       <span v-if="!rightIcon">
         <v-icon left>{{ icon }}</v-icon>
@@ -27,7 +28,7 @@
 
 <script>
 export default {
-  name: "ChipComponent",
+  name: "ChipVuetifyComponent",
   props: {
     title: {
       type: String,
@@ -41,11 +42,11 @@ export default {
     },
     color: {
       type: String,
-      default: "#1976d2",
+      // default: "#1976d2",
     },
-    TextColor: {
+    textColor: {
       type: String,
-      default: "black",
+      // default: "black",
     },
     filter: {
       type: Boolean,
@@ -79,6 +80,9 @@ export default {
       type: Boolean,
       default: false,
     },
+    variant: {
+      type: String,
+    },
   },
   data() {
     return {};
@@ -93,6 +97,8 @@ export default {
 .titleStyle {
   font-size: 22px !important;
   height: 40px !important;
+  background-color: var(--td-color) !important;
+  border-color: var(--th-color) !important;
   span {
     padding: 2px;
   }

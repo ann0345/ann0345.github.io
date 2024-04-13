@@ -48,11 +48,9 @@
 </template>
 
 <script>
-import UnorderedList from "./UnorderedList";
 export default {
   name: "TimelineComponent",
   components: {
-    UnorderedList,
   },
   props: {
     value: {
@@ -75,25 +73,25 @@ export default {
 <style lang="scss" scope>
 .cardTitle {
   font-size: 22px;
-  background-color: $th-color;
+  background-color: var(--th-color);
   word-break: break-word;
 }
 .cardText {
   padding-top: 16px !important;
-  background-color: $td-color;
+  background-color: var(--td-color);
   word-break: break-word;
   p {
-    color: black;
+    color: var(--p--color);
     font-size: 20px;
     text-align: start;
     margin-bottom: 0px !important;
   }
   span {
-    color: rgb(33, 33, 33);
+    color: var(--span--color);
   }
 }
 .onBoardTime {
   font-size: 20px;
-  color: rgb(40, 40, 40);
+  color: var(--span--color);
 }
 </style>

@@ -1,14 +1,13 @@
 <template>
   <v-container>
     <span class="talign-start">
-      <Chip
+      <ChipVuetify
         v-if="subTitle"
         :title="subTitle"
         :icon="titleIcon"
-        :color="'#1976d2'"
-        outlined
+        :variant="'elevated'"
         rightIcon
-      ></Chip>
+      ></ChipVuetify>
     </span>
     <ul>
       <li
@@ -26,12 +25,8 @@
 </template>
 
 <script>
-import Chip from "../atoms/Chip";
 export default {
   name: "UnorderedListComponent",
-  components: {
-    Chip,
-  },
   props: {
     titleIcon: {
       type: String,
