@@ -19,6 +19,11 @@ const routes = [
     name: "resume",
     component: () => import("../views/ResumeView.vue"),
   },
+  {
+    path: "/playground",
+    name: "playground",
+    component: () => import("../views/PlaygroundView.vue"),
+  },
 ];
 const router = new VueRouter({
   routes,
