@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "UnorderedListComponent",
+  name: "UnorderedList",
   props: {
     titleIcon: {
       type: String,

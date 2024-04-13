@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "SwitchVuetifyComponent",
+  name: "SwitchVuetify",
   props: {
     label: {
       type: String,

@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "NavigatorComponent",
+  name: "Navigator",
   components: {
   },
   props: {

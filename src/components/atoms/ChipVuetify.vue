@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "ChipVuetifyComponent",
+  name: "ChipVuetify",
   props: {
     title: {
       type: String,
