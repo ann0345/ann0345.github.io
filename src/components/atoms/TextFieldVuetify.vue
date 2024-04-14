@@ -1,15 +1,24 @@
 <template>
-  <v-text-field
-    v-model="localValue"
-    :label="label"
-    :placeholder="placeholder"
-    :dense="dense"
-    :outlined="outlined"
-    :error="error"
-    :rules="rules"
-    :disabled="disabled"
-    :error-messages="errorMessages"
-  />
+  <div>
+    <div class="inputTitle">
+      {{ title }}
+    </div>
+    <v-text-field
+      v-model="localValue"
+      :label="label"
+      :placeholder="placeholder"
+      :prefix="prefix"
+      :suffix="suffix"
+      :dense="dense"
+      :outlined="outlined"
+      :error="error"
+      :rules="rules"
+      :counter="counter"
+      :disabled="disabled"
+      :hide-details="hideDetails"
+      :error-messages="errorMessages"
+    />
+  </div>
 </template>
 
 <script>
@@ -17,12 +26,17 @@ export default {
   name: "TextFieldVuetify",
   props: {
     value: [String, Number],
+    title: String,
     label: String,
     placeholder: String,
+    prefix: String,
+    suffix: String,
     outlined: Boolean,
     dense: Boolean,
     disabled: Boolean,
     error: Boolean,
+    counter: Boolean,
+    hideDetails: Boolean,
     errorMessages: [String, Array],
     rules: [String, Array],
   },
@@ -38,3 +52,5 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+</style>

@@ -1,11 +1,14 @@
 :root, html[targetTheme="light"] {
---bg-color: lightgray;
---th-color: #bde9f7;
---td-color: #def2f9;
---link-color: #339e70;
---mainText-color: #2c3e50;
---p--color: #000000;
---span--color: #212121;
+	--bg-color: lightgray;
+	--th-color: #bde9f7;
+	--td-color: #def2f9;
+	--link-color: #339e70;
+	--mainText-color: #2c3e50;
+	--p--color: #000000;
+	--span--color: #212121;
+	--disable-bg-color: darkgray;
+	--lightRed: #f62a2a;
+	--input-height: 32px;
 }
 html[targetTheme="dark"] {
 	--bg-color: rgb(50, 50, 50);
@@ -15,6 +18,7 @@ html[targetTheme="dark"] {
 	--mainText-color: #b7b7b7;
 	--p--color: #b7b7b7;
 	--span--color: #bebebe;
+	--disable-bg-color: #555555;
 	}
 body {
 	background-color: var(--bg-color);
@@ -66,6 +70,40 @@ a {
 		}
 	}
 }
-.talign-start {
+.textAlign-start {
 	text-align: start;
+}
+.row {
+	margin: -12px 8px;
+}
+.inputTitle {
+	display: flex;
+	align-items: center;
+	min-height: var(--input-height);
+	font-size: medium;
+}
+.v-input--selection-controls {
+	margin-top: 0px;
+}
+// 下拉選單選項
+.v-autocomplete__content {
+  .v-list-item__title {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+// 下拉選單模糊搜尋內容
+.v-list-item .v-list-item__mask {
+	color: var(--lightRed) !important;
+}
+// 反灰欄位
+.v-input--is-disabled {
+	.v-input__control > .v-input__slot {
+		background-color: var(--disable-bg-color);
+		.v-text-field__slot > input, .v-select__slot > input,
+		.v-input--radio-group__input > .v-radio--is-disabled, label {
+			cursor: no-drop;
+			color: var(--span--color);
+		}
+	}
 }

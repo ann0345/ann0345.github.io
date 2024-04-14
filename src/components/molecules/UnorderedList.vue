@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <span class="talign-start">
+    <span class="textAlign-start">
       <ChipVuetify
         v-if="subTitle"
         :title="subTitle"
