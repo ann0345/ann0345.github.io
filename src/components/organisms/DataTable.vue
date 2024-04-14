@@ -11,7 +11,6 @@
         :headers="headers"
         :items="dataTableItems"
         height="600"
-        multi-sort
         fixed-header
         hide-default-footer
         page.sync="page"
