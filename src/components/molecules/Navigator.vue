@@ -6,13 +6,6 @@
       <router-link to="/dataTable">DataTable</router-link> |
       <router-link to="/playground">Playground</router-link>
     </nav>
-    <!-- FIXME switch & theme -->
-    <SwitchVuetify
-      v-model="isDark"
-      label="Dark Mode"
-      inset
-      hideDetails
-    ></SwitchVuetify>
   </v-container>
 </template>
 
@@ -28,16 +21,6 @@ export default {
   },
   created() {},
   computed:{
-    isDark: {
-      get() {
-        return this.$vuetify.theme.dark;
-      },
-      set() {
-        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-        let targetTheme = this.$vuetify.theme.dark ? "dark" : "light";
-        document.documentElement.setAttribute("targetTheme", targetTheme)
-      }
-    }
   },
   methods: {},
 };
