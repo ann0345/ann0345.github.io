@@ -2,9 +2,9 @@
   <v-container>
     <nav>
       <router-link to="/">Intro</router-link> |
+      <router-link to="/playground">Playground</router-link> |
       <router-link to="/resume">Resume</router-link> |
-      <router-link to="/dataTable">DataTable</router-link> |
-      <router-link to="/playground">Playground</router-link>
+      <router-link to="/dataTable">DataTable</router-link>
     </nav>
   </v-container>
 </template>
