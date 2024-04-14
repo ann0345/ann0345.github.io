@@ -1,9 +1,6 @@
 import axios from "axios";
 import Mock from "mockjs";
 
-// Mock.setup({
-//   timeout: 2000,
-// });
 const state = {
   dataTableItems: [],
 };
