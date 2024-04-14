@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="d-flex">
     <v-chip
       class="titleStyle"
       :color="color"
@@ -8,19 +8,22 @@
       :label="label"
       :link="link"
       :outlined="outlined"
+      :elevated="elevated"
+      :tonal="tonal"
       :pill="pill"
       :close="close"
-      :small="small"
-      :large="large"
-      :variant="variant"
+      :size="size"
     >
-      <span v-if="!rightIcon">
+      <span v-if="icon && !rightIcon">
         <v-icon left>{{ icon }}</v-icon>
         {{ title }}
       </span>
-      <span v-else>
+      <span v-else-if="icon">
         {{ title }}
         <v-icon right>{{ icon }}</v-icon>
+      </span>
+      <span v-else>
+        {{ title }}
       </span>
     </v-chip>
   </div>
@@ -28,7 +31,7 @@
 
 <script>
 export default {
-  name: "ChipVuetifyComponent",
+  name: "ChipVuetify",
   props: {
     title: {
       type: String,
@@ -42,11 +45,9 @@ export default {
     },
     color: {
       type: String,
-      // default: "#1976d2",
     },
     textColor: {
       type: String,
-      // default: "black",
     },
     filter: {
       type: Boolean,
@@ -72,15 +73,13 @@ export default {
       type: Boolean,
       default: false,
     },
-    small: {
-      type: Boolean,
-      default: false,
+    size: {
+      type: String,
     },
-    large: {
-      type: Boolean,
-      default: false,
+    elevated: {
+      type: String,
     },
-    variant: {
+    tonal: {
       type: String,
     },
   },

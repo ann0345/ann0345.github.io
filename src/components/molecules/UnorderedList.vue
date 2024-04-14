@@ -1,13 +1,15 @@
 <template>
   <v-container>
-    <span class="talign-start">
-      <ChipVuetify
-        v-if="subTitle"
-        :title="subTitle"
-        :icon="titleIcon"
-        :variant="'elevated'"
-        rightIcon
-      ></ChipVuetify>
+    <span class="textAlign-start">
+      <div>
+        <ChipVuetify
+          v-if="subTitle"
+          :title="subTitle"
+          :icon="titleIcon"
+          elevated
+          rightIcon
+        ></ChipVuetify>
+      </div>
     </span>
     <ul>
       <li
@@ -26,7 +28,7 @@
 
 <script>
 export default {
-  name: "UnorderedListComponent",
+  name: "UnorderedList",
   props: {
     titleIcon: {
       type: String,

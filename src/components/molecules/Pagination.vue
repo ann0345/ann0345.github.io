@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "PaginationComponent",
+  name: "Pagination",
   props: {
     totalCount: {
       type: Number,

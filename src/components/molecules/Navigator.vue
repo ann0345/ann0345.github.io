@@ -3,7 +3,8 @@
     <nav>
       <router-link to="/">Intro</router-link> |
       <router-link to="/resume">Resume</router-link> |
-      <router-link to="/dataTable">DataTable</router-link>
+      <router-link to="/dataTable">DataTable</router-link> |
+      <router-link to="/playground">Playground</router-link>
     </nav>
     <!-- FIXME switch & theme -->
     <SwitchVuetify
@@ -17,7 +18,7 @@
 
 <script>
 export default {
-  name: "NavigatorComponent",
+  name: "Navigator",
   components: {
   },
   props: {

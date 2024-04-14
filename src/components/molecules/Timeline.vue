@@ -49,7 +49,7 @@
 
 <script>
 export default {
-  name: "TimelineComponent",
+  name: "Timeline",
   components: {
   },
   props: {
