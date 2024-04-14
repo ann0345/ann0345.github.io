@@ -1,13 +1,15 @@
 <template>
   <v-container>
     <span class="textAlign-start">
-      <ChipVuetify
-        v-if="subTitle"
-        :title="subTitle"
-        :icon="titleIcon"
-        :variant="'elevated'"
-        rightIcon
-      ></ChipVuetify>
+      <div>
+        <ChipVuetify
+          v-if="subTitle"
+          :title="subTitle"
+          :icon="titleIcon"
+          elevated
+          rightIcon
+        ></ChipVuetify>
+      </div>
     </span>
     <ul>
       <li

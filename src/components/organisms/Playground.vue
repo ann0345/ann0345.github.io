@@ -163,6 +163,75 @@
           </v-col>
         </v-row>
         <v-divider></v-divider>
+        <v-card-title class="text-h4">chip</v-card-title>
+        <v-row class="my-4">
+            <ChipVuetify
+              :title="chip1"
+              :icon="chipIcon"
+              elevated
+              class="pr-2"
+            ></ChipVuetify>
+            <ChipVuetify
+              :title="chip2"
+              :icon="chipIcon"
+              tonal
+              rightIcon
+              class="pr-2"
+            ></ChipVuetify>
+            <ChipVuetify
+              :title="chip3"
+              class="pr-2"
+            ></ChipVuetify>
+            <ChipVuetify
+              :title="chip4"
+              color="success"
+              outlined
+              class="pr-2"
+            ></ChipVuetify>
+            <ChipVuetify
+              :title="chip5"
+              textColor="primary"
+            ></ChipVuetify>
+        </v-row>
+        <v-divider></v-divider>
+        <v-card-title class="text-h4">switch</v-card-title>
+        <v-row>
+          <v-col md="2">
+            <SwitchVuetify
+              v-model="switch2"
+              label="default"
+              :false-value="false"
+              :true-value="true"
+            ></SwitchVuetify>
+            <SwitchVuetify
+              v-model="switch1"
+              label="inset"
+              inset
+              :false-value="false"
+              :true-value="true"
+            ></SwitchVuetify>
+          </v-col>
+          <v-col md="2">
+            <SwitchVuetify
+              v-model="switch3"
+              color="primary"
+              label="primary"
+              inset
+              :false-value="false"
+              :true-value="true"
+            ></SwitchVuetify>
+            <SwitchVuetify
+              v-model="switch4"
+              color="warning"
+              label="warning"
+              inset
+              :false-value="false"
+              :true-value="true"
+            ></SwitchVuetify>
+
+          </v-col>
+        </v-row>
+        <v-divider></v-divider>
       </v-card>
     </v-container>
   </v-app>
@@ -196,10 +265,20 @@ export default {
       textarea2: "固定高度不可調整",
       textarea3: "最多只能輸入10個字",
       textarea4: "不要超過5",
+      chip1: "leftIcon",
+      chip2: "rightIcon",
+      chip3: "default",
+      chip4: "success",
+      chip5: "primary",
+      chipIcon: "mdi-movie-open-edit",
+      switch1: true,
+      switch2: false,
+      switch3: true,
+      switch4: true,
       rule: {
         text4: [v => !!v || "請輸入內容"],
         radioOption4: [v => !v || v === "opt1" || "請選opt1"],
-        autoComplete3: [v => !v || v === "opt1" || "請選opt1"],
+        autoComplete3: [v => !!v || "此欄位必填"],
         textarea4: [v => v.length < 6 || "請勿輸入超過5個字"],
       }
     };
@@ -216,5 +295,8 @@ export default {
 .vcard {
   border: 1px solid;
   background-color: var(--bg-color) !important;
+}
+.row {
+	margin: -12px 8px;
 }
 </style>
