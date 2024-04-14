@@ -297,6 +297,6 @@ export default {
   background-color: var(--bg-color) !important;
 }
 .row {
-	margin: -12px 8px;
+	margin: -12px 40px;
 }
 </style>
