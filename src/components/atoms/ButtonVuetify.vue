@@ -26,5 +26,5 @@ export default {
     loading: Boolean,
     icon: String,
   },
-}
+};
 </script>

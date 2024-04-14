@@ -35,8 +35,7 @@
 import { mapState, mapGetters, mapActions } from "vuex";
 export default {
   name: "DataTableComponent",
-  components: {
-  },
+  components: {},
   mounted() {
     this.doQryDefaultData();
   },

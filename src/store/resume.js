@@ -9,7 +9,7 @@ const state = {
 const getters = {};
 const mutations = {
   setResume(state, data) {
-    const {skillGroup1, skillGroup2, skillGroup3, workExp} = data;
+    const { skillGroup1, skillGroup2, skillGroup3, workExp } = data;
     state.skillGroup1 = skillGroup1;
     state.skillGroup2 = skillGroup2;
     state.skillGroup3 = skillGroup3;

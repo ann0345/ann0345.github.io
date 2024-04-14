@@ -55,19 +55,16 @@ export default {
     },
   },
   data() {
-    return {
-    };
+    return {};
   },
   created() {},
-  computed: {
-  },
+  computed: {},
   methods: {
     onChange(value) {
-      this.$emit('input', value);
+      this.$emit("input", value);
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

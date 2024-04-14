@@ -50,8 +50,7 @@
 <script>
 export default {
   name: "Timeline",
-  components: {
-  },
+  components: {},
   props: {
     value: {
       type: Array,

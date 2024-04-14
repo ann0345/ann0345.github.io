@@ -16,7 +16,7 @@ export default new Vuetify({
       },
       dark: {
         background: "#FFFFFF",
-        text:"#21283E",
+        text: "#21283E",
       },
     },
   },

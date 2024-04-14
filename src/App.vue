@@ -10,10 +10,9 @@
 
 <script>
 export default {
-  data(){
-    return {}
+  data() {
+    return {};
   },
-}
+};
 </script>
-<style lang="scss" scope>
-</style>
+<style lang="scss" scope></style>

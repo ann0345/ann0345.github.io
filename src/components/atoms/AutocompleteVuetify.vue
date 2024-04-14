@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <div class="inputTitle">
       {{ title }}
     </div>
@@ -52,7 +52,7 @@ export default {
       },
     },
     targetOpts() {
-      return this.items.map(item => {
+      return this.items.map((item) => {
         if (typeof item === "object") {
           return {
             text: item[this.itemText],
@@ -61,11 +61,11 @@ export default {
         } else {
           return {
             text: item,
-            value: item
+            value: item,
           };
         }
       });
-    }
+    },
   },
-}
+};
 </script>

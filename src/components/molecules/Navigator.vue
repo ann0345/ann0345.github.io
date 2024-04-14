@@ -12,16 +12,13 @@
 <script>
 export default {
   name: "Navigator",
-  components: {
-  },
-  props: {
-  },
+  components: {},
+  props: {},
   data() {
     return {};
   },
   created() {},
-  computed:{
-  },
+  computed: {},
   methods: {},
 };
 </script>

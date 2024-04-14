@@ -7,19 +7,24 @@ import vuetify from "./config/vuetify-config";
 import globalMixins from "./mixins/globalMixin";
 
 // 自動導入atom molecule
-const atom = require.context('./components/atoms', true, /\.vue$/);
-atom.keys().forEach(fileName => {
+const atom = require.context("./components/atoms", true, /\.vue$/);
+atom.keys().forEach((fileName) => {
   const config = atom(fileName);
-  const name = fileName.split('/').pop().replace(/\.\w+$/, '');
+  const name = fileName
+    .split("/")
+    .pop()
+    .replace(/\.\w+$/, "");
   Vue.component(name, config.default || config);
 });
-const molecules = require.context('./components/molecules', true, /\.vue$/);
-molecules.keys().forEach(fileName => {
+const molecules = require.context("./components/molecules", true, /\.vue$/);
+molecules.keys().forEach((fileName) => {
   const config = molecules(fileName);
-  const name = fileName.split('/').pop().replace(/\.\w+$/, '');
+  const name = fileName
+    .split("/")
+    .pop()
+    .replace(/\.\w+$/, "");
   Vue.component(name, config.default || config);
 });
-
 
 Vue.mixin(globalMixins);
 

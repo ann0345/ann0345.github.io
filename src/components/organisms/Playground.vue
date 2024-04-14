@@ -177,33 +177,27 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">chip</v-card-title>
         <v-row class="my-4">
-            <ChipVuetify
-              :title="chip1"
-              :icon="chipIcon"
-              elevated
-              class="pr-2"
-            ></ChipVuetify>
-            <ChipVuetify
-              :title="chip2"
-              :icon="chipIcon"
-              tonal
-              rightIcon
-              class="pr-2"
-            ></ChipVuetify>
-            <ChipVuetify
-              :title="chip3"
-              class="pr-2"
-            ></ChipVuetify>
-            <ChipVuetify
-              :title="chip4"
-              color="success"
-              outlined
-              class="pr-2"
-            ></ChipVuetify>
-            <ChipVuetify
-              :title="chip5"
-              textColor="primary"
-            ></ChipVuetify>
+          <ChipVuetify
+            :title="chip1"
+            :icon="chipIcon"
+            elevated
+            class="pr-2"
+          ></ChipVuetify>
+          <ChipVuetify
+            :title="chip2"
+            :icon="chipIcon"
+            tonal
+            rightIcon
+            class="pr-2"
+          ></ChipVuetify>
+          <ChipVuetify :title="chip3" class="pr-2"></ChipVuetify>
+          <ChipVuetify
+            :title="chip4"
+            color="success"
+            outlined
+            class="pr-2"
+          ></ChipVuetify>
+          <ChipVuetify :title="chip5" textColor="primary"></ChipVuetify>
         </v-row>
         <v-divider></v-divider>
         <v-card-title class="text-h4">switch</v-card-title>
@@ -240,7 +234,6 @@
               :false-value="false"
               :true-value="true"
             ></SwitchVuetify>
-
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -251,10 +244,8 @@
 <script>
 export default {
   name: "PlaygroundComponent",
-  components: {
-  },
-  mounted() {
-  },
+  components: {},
+  mounted() {},
   data() {
     return {
       text1: "hideDetails",
@@ -262,10 +253,12 @@ export default {
       text3: "disabled",
       text4: "",
       text5: "no dense",
-      selection1: ["opt1","opt2","opt3"],
-      selection2: [{label: "apple", value: "opt1"},
-      {label: "guava", value: "opt2"},
-      {label: "orange", value: "opt3"}],
+      selection1: ["opt1", "opt2", "opt3"],
+      selection2: [
+        { label: "apple", value: "opt1" },
+        { label: "guava", value: "opt2" },
+        { label: "orange", value: "opt3" },
+      ],
       radioOption1: "opt2",
       radioOption2: "opt2",
       radioOption3: "opt2",
@@ -288,11 +281,11 @@ export default {
       switch3: true,
       switch4: true,
       rule: {
-        text4: [v => !!v || "請輸入內容"],
-        radioOption4: [v => !v || v === "opt1" || "請選opt1"],
-        autoComplete3: [v => !!v || "此欄位必填"],
-        textarea4: [v => v.length < 6 || "請勿輸入超過5個字"],
-      }
+        text4: [(v) => !!v || "請輸入內容"],
+        radioOption4: [(v) => !v || v === "opt1" || "請選opt1"],
+        autoComplete3: [(v) => !!v || "此欄位必填"],
+        textarea4: [(v) => v.length < 6 || "請勿輸入超過5個字"],
+      },
     };
   },
   computed: {
@@ -303,13 +296,12 @@ export default {
       set() {
         this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
         let targetTheme = this.$vuetify.theme.dark ? "dark" : "light";
-        document.documentElement.setAttribute("targetTheme", targetTheme)
-      }
-    }
+        document.documentElement.setAttribute("targetTheme", targetTheme);
+      },
+    },
   },
   watch: {},
-  methods: {
-  },
+  methods: {},
 };
 </script>
 
@@ -319,7 +311,7 @@ export default {
   background-color: var(--bg-color) !important;
 }
 .row {
-	margin: -12px 40px;
+  margin: -12px 40px;
 }
 @media (max-width: 600px) {
   .vcard {

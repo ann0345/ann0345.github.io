@@ -1,30 +1,30 @@
 <template>
-<div>
-  <div class="inputTitle">
-    {{ title }}
-  </div>
-  <v-radio-group
-    v-model="localValue"
-    :row="row"
-    :label="label"
-    :error="error"
-    :rules="rules"
-    :disabled="disabled"
-    :hide-details="hideDetails"
-    :error-messages="errorMessages"
-  >
-    <v-radio
-      v-for="opt in targetOpts"
-      :key="opt.value"
-      :label="opt.text"
-      :value="opt.value"
+  <div>
+    <div class="inputTitle">
+      {{ title }}
+    </div>
+    <v-radio-group
+      v-model="localValue"
+      :row="row"
+      :label="label"
+      :error="error"
+      :rules="rules"
+      :disabled="disabled"
+      :hide-details="hideDetails"
+      :error-messages="errorMessages"
     >
-    <template v-slot:label>
-      <div>{{ opt.text }}</div>
-    </template>
-    </v-radio>
-  </v-radio-group>
-</div>
+      <v-radio
+        v-for="opt in targetOpts"
+        :key="opt.value"
+        :label="opt.text"
+        :value="opt.value"
+      >
+        <template v-slot:label>
+          <div>{{ opt.text }}</div>
+        </template>
+      </v-radio>
+    </v-radio-group>
+  </div>
 </template>
 
 <script>
@@ -60,7 +60,7 @@ export default {
       },
     },
     targetOpts() {
-      return this.options.map(opt => {
+      return this.options.map((opt) => {
         if (typeof opt === "object") {
           return {
             text: opt[this.itemText],
@@ -69,11 +69,11 @@ export default {
         } else {
           return {
             text: opt,
-            value: opt
+            value: opt,
           };
         }
       });
     },
   },
-}
+};
 </script>
