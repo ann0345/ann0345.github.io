@@ -14,14 +14,17 @@
           <v-col md="2">
             <TextFieldVuetify
               v-model="text2"
+              title="計數器字數控制"
               dense
               outlined
               counter
+              :maxlength="25"
             ></TextFieldVuetify>
           </v-col>
           <v-col md="2">
             <TextFieldVuetify
               v-model="text3"
+              title="預設反灰"
               dense
               outlined
               disabled
@@ -30,6 +33,7 @@
           <v-col md="2">
             <TextFieldVuetify
               v-model="text5"
+              title="前後綴"
               outlined
               :prefix="'前'"
               :suffix="'後'"
@@ -116,6 +120,49 @@
           </v-col>
         </v-row>
         <v-divider></v-divider>
+        <v-card-title class="text-h4">textArea</v-card-title>
+        <v-row>
+          <v-col md="2">
+            <TextareaVuetify
+              v-model="textarea1"
+              title="可調整大小"
+              placeholder="请输入內容"
+              outlined
+            ></TextareaVuetify>
+          </v-col>
+          <v-col md="2">
+            <TextareaVuetify
+              v-model="textarea2"
+              title="預設反灰"
+              :rows="5"
+              outlined
+              disabled
+              no-resize
+            ></TextareaVuetify>
+          </v-col>
+          <v-col md="2">
+            <TextareaVuetify
+              title="限制輸入上限"
+              v-model="textarea3"
+              dense
+              outlined
+              counter
+              :maxlength="10"
+            ></TextareaVuetify>
+          </v-col>
+          <v-col md="2">
+            <TextareaVuetify
+              title="自訂檢核"
+              v-model="textarea4"
+              dense
+              outlined
+              counter
+              :rows="2"
+              :rules="rule.textarea4"
+            ></TextareaVuetify>
+          </v-col>
+        </v-row>
+        <v-divider></v-divider>
       </v-card>
     </v-container>
   </v-app>
@@ -130,7 +177,7 @@ export default {
   data() {
     return {
       text1: "hideDetails",
-      text2: "dense outlined counter",
+      text2: "custom maxlength",
       text3: "disabled",
       text4: "",
       text5: "no dense",
@@ -145,10 +192,15 @@ export default {
       autoComplete1: "opt2",
       autoComplete2: "opt3",
       autoComplete3: "opt1",
+      textarea1: "這裡有內容",
+      textarea2: "固定高度不可調整",
+      textarea3: "最多只能輸入10個字",
+      textarea4: "不要超過5",
       rule: {
         text4: [v => !!v || "請輸入內容"],
         radioOption4: [v => !v || v === "opt1" || "請選opt1"],
         autoComplete3: [v => !v || v === "opt1" || "請選opt1"],
+        textarea4: [v => v.length < 6 || "請勿輸入超過5個字"],
       }
     };
   },

@@ -101,7 +101,8 @@ a {
 	.v-input__control > .v-input__slot {
 		background-color: var(--disable-bg-color);
 		.v-text-field__slot > input, .v-select__slot > input,
-		.v-input--radio-group__input > .v-radio--is-disabled, label {
+		.v-input--radio-group__input > .v-radio--is-disabled,
+		label, textarea {
 			cursor: no-drop;
 			color: var(--span--color);
 		}

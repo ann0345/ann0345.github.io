@@ -14,6 +14,7 @@
       :error="error"
       :rules="rules"
       :counter="counter"
+      :maxlength="maxlength"
       :disabled="disabled"
       :hide-details="hideDetails"
       :error-messages="errorMessages"
@@ -37,6 +38,10 @@ export default {
     error: Boolean,
     counter: Boolean,
     hideDetails: Boolean,
+    maxlength: {
+      type: Number,
+      default: 30,
+    },
     errorMessages: [String, Array],
     rules: [String, Array],
   },
