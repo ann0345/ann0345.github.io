@@ -55,7 +55,7 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "ResumeComponent",
   components: {},
-  mounted() {
+  created() {
     this.fetchResume();
   },
   data() {
