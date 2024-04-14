@@ -2,16 +2,28 @@
   <v-app>
     <v-container>
       <v-card class="vcard">
+        <v-card-title class="text-h4">set theme</v-card-title>
+        <v-row class="my-4">
+          <SwitchVuetify
+            v-model="isDark"
+            label="Dark Mode"
+            inset
+            hideDetails
+            :false-value="false"
+            :true-value="true"
+          ></SwitchVuetify>
+        </v-row>
+        <v-divider></v-divider>
         <v-card-title class="text-h4">textfield</v-card-title>
         <v-row>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextFieldVuetify
               v-model="text1"
               hideDetails
               dense
             ></TextFieldVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextFieldVuetify
               v-model="text2"
               title="計數器字數控制"
@@ -21,7 +33,7 @@
               :maxlength="25"
             ></TextFieldVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextFieldVuetify
               v-model="text3"
               title="預設反灰"
@@ -30,7 +42,7 @@
               disabled
             ></TextFieldVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextFieldVuetify
               v-model="text5"
               title="前後綴"
@@ -39,7 +51,7 @@
               :suffix="'後'"
             ></TextFieldVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextFieldVuetify
               v-model="text4"
               title="自訂檢核"
@@ -53,7 +65,7 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">radioGroup</v-card-title>
         <v-row>
-          <v-col md="1">
+          <v-col cols="12" sm="6" md="1">
             <RadioGroupVuetify
               v-model="radioOption1"
               title="直行"
@@ -62,7 +74,7 @@
               item-value="value"
             ></RadioGroupVuetify>
           </v-col>
-          <v-col md="3">
+          <v-col cols="12" sm="6" md="3">
             <RadioGroupVuetify
               v-model="radioOption2"
               title="橫列"
@@ -70,7 +82,7 @@
               row
             ></RadioGroupVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <RadioGroupVuetify
               v-model="radioOption3"
               title="反灰"
@@ -79,7 +91,7 @@
               hideDetails
             ></RadioGroupVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <RadioGroupVuetify
               v-model="radioOption4"
               title="自訂檢核"
@@ -91,14 +103,14 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">autocomplete</v-card-title>
         <v-row>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <AutocompleteVuetify
               title="模糊搜尋自訂變色"
               v-model="autoComplete1"
               :items="selection2"
             ></AutocompleteVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <AutocompleteVuetify
               v-model="autoComplete2"
               title="預設反灰"
@@ -108,7 +120,7 @@
               disabled
             ></AutocompleteVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <AutocompleteVuetify
               title="自訂檢核"
               v-model="autoComplete3"
@@ -122,7 +134,7 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">textArea</v-card-title>
         <v-row>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextareaVuetify
               v-model="textarea1"
               title="可調整大小"
@@ -130,7 +142,7 @@
               outlined
             ></TextareaVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextareaVuetify
               v-model="textarea2"
               title="預設反灰"
@@ -140,7 +152,7 @@
               no-resize
             ></TextareaVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextareaVuetify
               title="限制輸入上限"
               v-model="textarea3"
@@ -150,7 +162,7 @@
               :maxlength="10"
             ></TextareaVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <TextareaVuetify
               title="自訂檢核"
               v-model="textarea4"
@@ -196,7 +208,7 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">switch</v-card-title>
         <v-row>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <SwitchVuetify
               v-model="switch2"
               label="default"
@@ -211,7 +223,7 @@
               :true-value="true"
             ></SwitchVuetify>
           </v-col>
-          <v-col md="2">
+          <v-col cols="12" sm="6" md="2">
             <SwitchVuetify
               v-model="switch3"
               color="primary"
@@ -284,6 +296,16 @@ export default {
     };
   },
   computed: {
+    isDark: {
+      get() {
+        return this.$vuetify.theme.dark;
+      },
+      set() {
+        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+        let targetTheme = this.$vuetify.theme.dark ? "dark" : "light";
+        document.documentElement.setAttribute("targetTheme", targetTheme)
+      }
+    }
   },
   watch: {},
   methods: {
@@ -298,5 +320,13 @@ export default {
 }
 .row {
 	margin: -12px 40px;
+}
+@media (max-width: 600px) {
+  .vcard {
+    padding: 8px;
+  }
+  .v-card-title {
+    font-size: 18px;
+  }
 }
 </style>
