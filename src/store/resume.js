@@ -89,9 +89,9 @@ const actions = {
       },
     });
     axios
-    .post("/api/data")
-    .then((response) => {
-      commit("setResume", response.data.data);
+      .post("/api/data")
+      .then((response) => {
+        commit("setResume", response.data.data);
       })
       .catch((e) => {
         console.error(e);

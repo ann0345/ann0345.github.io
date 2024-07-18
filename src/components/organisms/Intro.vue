@@ -120,4 +120,14 @@ export default {
     }
   }
 }
+@media (max-width: 600px) {
+  .doc {
+    .row {
+      .col {
+        padding: 0px;
+        flex: auto;
+      }
+    }
+  }
+}
 </style>
