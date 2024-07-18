@@ -2,7 +2,7 @@
 
 ## 專案內容
 個人作品集，主要使用vue2+vuetify2+scss，
-資料串接使用 [mocki.io](https://mocki.io/fake-json-api)，假資料使用 [mock.jss](https://github.com/nuysoft/Mock/wiki/Getting-Started)，
+履歷內容串接和假資料表使用 [mock.js](https://github.com/nuysoft/Mock/wiki/Getting-Started)，
 呈現各式共用元件的可能性
 ### Components
 詳 [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/)
