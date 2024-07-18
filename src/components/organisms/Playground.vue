@@ -197,7 +197,11 @@
             outlined
             class="chip"
           ></ChipVuetify>
-          <ChipVuetify :title="chip5" textColor="primary" class="chip"></ChipVuetify>
+          <ChipVuetify
+            :title="chip5"
+            textColor="primary"
+            class="chip"
+          ></ChipVuetify>
         </v-row>
         <v-divider></v-divider>
         <v-card-title class="text-h4">switch</v-card-title>
