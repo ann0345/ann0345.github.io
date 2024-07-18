@@ -16,14 +16,14 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">textfield</v-card-title>
         <v-row>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="4">
             <TextFieldVuetify
               v-model="text1"
               hideDetails
               dense
             ></TextFieldVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="4">
             <TextFieldVuetify
               v-model="text2"
               title="計數器字數控制"
@@ -33,7 +33,7 @@
               :maxlength="25"
             ></TextFieldVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="4">
             <TextFieldVuetify
               v-model="text3"
               title="預設反灰"
@@ -42,7 +42,7 @@
               disabled
             ></TextFieldVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="4">
             <TextFieldVuetify
               v-model="text5"
               title="前後綴"
@@ -51,7 +51,7 @@
               :suffix="'後'"
             ></TextFieldVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="4">
             <TextFieldVuetify
               v-model="text4"
               title="自訂檢核"
@@ -65,7 +65,7 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">radioGroup</v-card-title>
         <v-row>
-          <v-col cols="12" sm="6" md="1">
+          <v-col cols="12" sm="6" md="2">
             <RadioGroupVuetify
               v-model="radioOption1"
               title="直行"
@@ -74,7 +74,7 @@
               item-value="value"
             ></RadioGroupVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="3">
+          <v-col cols="12" sm="6" md="4">
             <RadioGroupVuetify
               v-model="radioOption2"
               title="橫列"
@@ -103,14 +103,14 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">autocomplete</v-card-title>
         <v-row>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="4">
             <AutocompleteVuetify
               title="模糊搜尋自訂變色"
               v-model="autoComplete1"
               :items="selection2"
             ></AutocompleteVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="4">
             <AutocompleteVuetify
               v-model="autoComplete2"
               title="預設反灰"
@@ -120,7 +120,7 @@
               disabled
             ></AutocompleteVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="4">
             <AutocompleteVuetify
               title="自訂檢核"
               v-model="autoComplete3"
@@ -134,7 +134,7 @@
         <v-divider></v-divider>
         <v-card-title class="text-h4">textArea</v-card-title>
         <v-row>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="3">
             <TextareaVuetify
               v-model="textarea1"
               title="可調整大小"
@@ -142,7 +142,7 @@
               outlined
             ></TextareaVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="3">
             <TextareaVuetify
               v-model="textarea2"
               title="預設反灰"
@@ -152,7 +152,7 @@
               no-resize
             ></TextareaVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="3">
             <TextareaVuetify
               title="限制輸入上限"
               v-model="textarea3"
@@ -162,7 +162,7 @@
               :maxlength="10"
             ></TextareaVuetify>
           </v-col>
-          <v-col cols="12" sm="6" md="2">
+          <v-col cols="12" sm="6" md="3">
             <TextareaVuetify
               title="自訂檢核"
               v-model="textarea4"
@@ -181,23 +181,23 @@
             :title="chip1"
             :icon="chipIcon"
             elevated
-            class="pr-2"
+            class="chip"
           ></ChipVuetify>
           <ChipVuetify
             :title="chip2"
             :icon="chipIcon"
             tonal
             rightIcon
-            class="pr-2"
+            class="chip"
           ></ChipVuetify>
-          <ChipVuetify :title="chip3" class="pr-2"></ChipVuetify>
+          <ChipVuetify :title="chip3" class="chip"></ChipVuetify>
           <ChipVuetify
             :title="chip4"
             color="success"
             outlined
-            class="pr-2"
+            class="chip"
           ></ChipVuetify>
-          <ChipVuetify :title="chip5" textColor="primary"></ChipVuetify>
+          <ChipVuetify :title="chip5" textColor="primary" class="chip"></ChipVuetify>
         </v-row>
         <v-divider></v-divider>
         <v-card-title class="text-h4">switch</v-card-title>
@@ -312,6 +312,10 @@ export default {
 }
 .row {
   margin: -12px 40px;
+}
+.chip {
+  padding-right: 8px;
+  padding-bottom: 8px;
 }
 @media (max-width: 600px) {
   .vcard {
