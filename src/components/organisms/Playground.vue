@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-container>
+    <v-container class="mb-8">
       <v-card class="vcard">
         <v-card-title class="text-h4">set theme</v-card-title>
         <v-row class="my-4">
@@ -237,14 +237,19 @@
           </v-col>
         </v-row>
         <v-divider></v-divider>
+        <v-card-title class="text-h4">movie seats</v-card-title>
+        <MovieSeats />
       </v-card>
     </v-container>
   </v-app>
 </template>
+
 <script>
+import MovieSeats from "./MovieSeats.vue";
+
 export default {
   name: "PlaygroundComponent",
-  components: {},
+  components: { MovieSeats },
   mounted() {},
   data() {
     return {
